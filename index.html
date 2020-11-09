@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Mirim in Photo</title>
+    <meta charset="UTF-8" />
+    <meta property="og:title" content="MIRIM IN PHOTO" />
+    <meta
+      property="og:description"
+      content="미림에서의 추억을 특별한 방식으로 기록해보세요."
+    />
+    <meta property="og:image" content="image/thumbnail.jpg" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?after" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var $banner = $(".banner").find("ul");
+
+        var $bannerWidth = $banner.children().outerWidth();
+        var $bannerHeight = $banner.children().outerHeight();
+        var $length = $banner.children().length;
+        var rollingId;
+
+        rollingId = setInterval(function () {
+          rollingStart();
+        }, 5000);
+
+        function rollingStart() {
+          $banner.css("width", $bannerWidth * $length + "px");
+          $banner.css("height", $bannerHeight + "px");
+          $banner.animate({ left: -$bannerWidth + "px" }, 1500, function () {
+            $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+            $(this).find("li:first").remove();
+            $(this).css("left", 0);
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="image/logo.png" width="45px" height="35px" />
+        </a>
+      </div>
+      <div class="menu">
+        <nav>
+          <div class="nav-item"><a href="portfolio.html">PORTFOLIO</a></div>
+          <div class="nav-item">
+            <a href="reservation.html">RESERVATION</a>
+          </div>
+          <div class="nav-item"><a href="about.html">ABOUT</a></div>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="slide-area">
+        <div class="banner">
+          <ul>
+            <li>
+              <img src="image/banner_1.jpg" width="1280px" height="720px" />
+            </li>
+            <li>
+              <center>
+                <img src="image/banner_2.jpg" width="1120px" height="630px" />
+              </center>
+            </li>
+            <li>
+              <img src="image/banner_3.jpg" width="1280px" height="720px" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
