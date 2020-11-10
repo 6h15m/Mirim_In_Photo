@@ -16,8 +16,8 @@
  
  ## Built With
 
-* Design | 성진민
-* Develop | 이예서
+* Design | 성진민 https://github.com/real-mean
+* Develop | 이예서 https://github.com/6h15m
 
  
 ## License / 라이센스
